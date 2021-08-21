@@ -87,12 +87,12 @@ public class Box<T extends Fruit> {   // Делаю ограничение, дл
         if (!(arrayList.isEmpty())){ // проверяем есть ли в коробке и которой будем пересыпать фрукты
             if (!(nextBox.arrayList.isEmpty())){ // проверяем есть ли фрукты в коробке в которую планируем перекладывать
                 if(nextBox.arrayList.get(0).getNameFruit() == arrayList.get(0).getNameFruit()){// проверяем одинаковые ли фрукты
-                    System.out.println("Пересыпаем из коробки :" + boxName + "в коробку :" + nextBox.boxName);
+                    System.out.println("Пересыпаем из коробки :" + boxName + " в коробку :" + nextBox.boxName);
                     nextBox.arrayList.addAll(arrayList);
                     System.out.println(nextBox.arrayList);
                 }else {
-                    System.out.println("В кробке " + boxName + " лежат " + arrayList.get(0).getNameFruit() +
-                            " Вы неможете их переложить в коробку с " + nextBox.arrayList.get(0).getNameFruit());
+                    System.out.println("В коробке " + boxName + " лежат " + arrayList.get(0).getNameFruit() +
+                            " Вы не можете их переложить в коробку с " + nextBox.arrayList.get(0).getNameFruit());
                 }
             }else {// если коробка пуста, то просто пересыпаем.
                 System.out.println("Пересыпаем из коробки :" + boxName + "в коробку :" + nextBox.boxName);
@@ -101,7 +101,7 @@ public class Box<T extends Fruit> {   // Делаю ограничение, дл
             }
 
         }else {
-            System.out.println(" Вы пытаетесь пресыпать фрукты из пустой корбке, вам нужно обратиться к врачу");
+            System.out.println(" Вы пытаетесь пересыпать фрукты из пустой коробки, вам нужно обратиться к врачу");
         }
     }
 

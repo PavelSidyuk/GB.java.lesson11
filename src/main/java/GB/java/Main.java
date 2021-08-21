@@ -21,10 +21,10 @@ public class Main {
 
         box1.add(apple);
         box1.add(apple1);
-        box1.add(apple2);
+        //box1.add(apple2);
 
-        box.add(orange1);
-        box.add(orange);
+        box.add(apple2);
+        //box.add(orange);
 
         box1.getWeight();
         box.compare(box1);
