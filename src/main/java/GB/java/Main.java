@@ -14,8 +14,9 @@ public class Main {
         Apple apple2 = new Apple();
 
 
-        Box box = new Box();
-        Box box1 = new Box();
+        Box box = new Box("1");
+        Box box1 = new Box("2");
+
 
 
         box1.add(apple);
@@ -27,7 +28,7 @@ public class Main {
 
         box1.getWeight();
         box.compare(box1);
-
+        box.transfer(box1);
 
     }
 }

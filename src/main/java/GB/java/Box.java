@@ -17,7 +17,7 @@ public class Box<T extends Fruit> {   // Делаю ограничение, дл
                 if (!arrayList.contains(items)) { // проверяем не лежит ли этот фрукт уже в корзине
                     arrayList.add(items);
 
-                    System.out.printf("Фрукт %s добавлен в корзину\n", items);
+                    System.out.printf("Фрукт %s добавлен в корзину %s\n", items,boxName);
                     System.out.println();
                 } else {
                     System.out.printf("Фрукт %s уже лежит в корзине положите другой\n", items);
@@ -33,7 +33,7 @@ public class Box<T extends Fruit> {   // Делаю ограничение, дл
 
             arrayList.add(items);
 
-            System.out.printf("Фрукт %s добавлен в корзину\n", items);
+            System.out.printf("Фрукт %s добавлен в корзину %s\n", items,boxName);
             System.out.println();
         }
 
@@ -77,6 +77,32 @@ public class Box<T extends Fruit> {   // Делаю ограничение, дл
         }
 
 
+    }
+
+    public Box (String boxName) {
+        this.boxName = boxName;
+    }
+
+    public void transfer(Box<T> nextBox){
+        if (!(arrayList.isEmpty())){ // проверяем есть ли в коробке и которой будем пересыпать фрукты
+            if (!(nextBox.arrayList.isEmpty())){ // проверяем есть ли фрукты в коробке в которую планируем перекладывать
+                if(nextBox.arrayList.get(0).getNameFruit() == arrayList.get(0).getNameFruit()){// проверяем одинаковые ли фрукты
+                    System.out.println("Пересыпаем из коробки :" + boxName + "в коробку :" + nextBox.boxName);
+                    nextBox.arrayList.addAll(arrayList);
+                    System.out.println(nextBox.arrayList);
+                }else {
+                    System.out.println("В кробке " + boxName + " лежат " + arrayList.get(0).getNameFruit() +
+                            " Вы неможете их переложить в коробку с " + nextBox.arrayList.get(0).getNameFruit());
+                }
+            }else {// если коробка пуста, то просто пересыпаем.
+                System.out.println("Пересыпаем из коробки :" + boxName + "в коробку :" + nextBox.boxName);
+                nextBox.arrayList.addAll(arrayList);
+                System.out.println(nextBox.arrayList);
+            }
+
+        }else {
+            System.out.println(" Вы пытаетесь пресыпать фрукты из пустой корбке, вам нужно обратиться к врачу");
+        }
     }
 
 
